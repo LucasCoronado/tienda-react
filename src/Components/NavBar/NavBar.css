@@ -1,0 +1,27 @@
+
+nav {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1ff3f3;
+}
+
+img {
+    margin: 20px;
+    height: 90%;
+}
+
+.navTitle {
+    font-weight: 700;
+    font-size: 21px;
+    margin: 15px;
+}
+
+.navItems  a {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 550;
+    text-decoration: none;
+    margin: 15px;
+}
