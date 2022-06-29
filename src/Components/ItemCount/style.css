@@ -1,0 +1,50 @@
+Productos
+.tarjetasProductos {
+   margin: 20px;
+  }
+  
+  .tarjetasProductos div {
+    margin: 20px;
+    margin-bottom: 40px;
+    background-color: rgb(246, 216, 216);
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .tarjetasProductos div {
+      width: 360px;
+      margin-inline: 40px;
+      margin-block: 40px;
+    }
+  }
+  
+  .tarjetasProductos div:hover {
+    -webkit-box-shadow: 10px 10px 50px #8b8d8f;
+  }
+  
+  .tarjetasProductos div img {
+    width: 90%;
+    min-height: 20vh;
+    max-height: 300px;
+    border-radius: 5px;
+  }
+  
+  .tarjetasProductos h3 {
+    font-weight: 400;
+    font-size: 0.6rem;
+    color: #212529;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
