@@ -1,27 +1,35 @@
-import React from "react";
-import "./styles.css";
-import ItemCount from "../ItemCount/ItemCount";
+import React, { useEffect, useState } from "react";
+import ItemList from "../ItemList/ItemList";
+import { getData } from '../../assets/articulos'
 
 const ItemListContainer = ({ greeting }) => {
-  const onAdd = (count) => {
-    if (count > 0) {
-      console.log(`Se agregaron:  ${count}`);
+  const [listaArticulos, setListaArticulos] = useState([])
+  const [cargando, setCargando] = useState(true)
+  
+  const getArticulos = async () => {
+    try {
+      const res = await getData
+      setListaArticulos(res)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setCargando(false)
     }
   }
 
+  useEffect(() => {
+    getArticulos()
+  }, [])
+
+
   return (
-    <div className="landing">
-      <ItemCount 
-      initial={0} 
-      stock={7} 
-      onAdd={onAdd}
-      img='https://picsum.photos/600/400' />
-      <ItemCount 
-      initial={0} 
-      stock={9} 
-      onAdd={onAdd}
-      img='https://picsum.photos/600/400' />
+
+    <div >
+      <h1>{greeting}</h1>
+      {cargando ? <p>En breve se cargaran los productos</p> : <ItemList listaArticulos={listaArticulos} />}
+
     </div>
+
   );
 };
 

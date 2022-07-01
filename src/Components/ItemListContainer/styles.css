@@ -1,7 +1,8 @@
 .landing {
   width: 100%;
   display: flex;
-  justify-content: start;
-  align-items: ;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
 }
 
