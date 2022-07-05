@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.png"
 import "./NavBar.css"
-import CartWidget from "../CartWidget/CartWidget";
+// import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
     return (
@@ -13,7 +13,7 @@ const NavBar = () => {
                 <a href=".">Productos</a>
                 <a href=".">Contacto</a>
             </div>
-            <CartWidget/>
+            {/* <CartWidget/> */}
         </nav >
     )
 }
