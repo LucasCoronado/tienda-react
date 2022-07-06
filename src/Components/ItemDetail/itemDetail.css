@@ -1,0 +1,16 @@
+.item {
+    margin: 5px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.item img {
+    height: 400px;
+    border-radius: 50px;
+}
+
+.item h3{
+    text-align: start;
+}

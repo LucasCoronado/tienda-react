@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./style.css";
 
-const ItemCount = ({ initial, onAdd, stock, img }) => {
+const ItemCount = ({ initial, onAdd, stock,}) => {
 
     const [contador, setContador] = useState(initial);
 
@@ -24,8 +24,7 @@ const ItemCount = ({ initial, onAdd, stock, img }) => {
     return (
         <div className='tarjetasProductos'>
             <div>
-                <img src= {img} alt="" />
-                <h3>Hay disponibles {stock} unidades</h3>
+                <h4>Hay disponibles {stock} unidades</h4>
                 <h2>{contador}</h2>
                 <span className='btn'>
                 <button onClick={() => clickResta()}>-</button>
