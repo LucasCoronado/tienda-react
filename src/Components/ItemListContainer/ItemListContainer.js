@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { getData } from '../../assets/articulos'
+import {useParams}  from 'react-router-dom'
 
 const ItemListContainer = ({ greeting }) => {
   const [listaArticulos, setListaArticulos] = useState([])
   const [cargando, setCargando] = useState(true)
   
-  const getArticulos = async () => {
-    try {
-      const res = await getData
-      setListaArticulos(res)
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setCargando(false)
-    }
-  }
+  const {categoryId} = useParams()
+  
 
   useEffect(() => {
-    getArticulos()
-  }, [])
+    setCargando(true)
+    getData(categoryId)
+    .then((res) => {
+      setListaArticulos(res);
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+    .finally(() =>{
+      setCargando(false)
+    });
+  }, [categoryId])
 
 
   return (

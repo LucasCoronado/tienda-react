@@ -7,9 +7,13 @@ nav {
     background-color: #1ff3f3;
 }
 
-img {
+.logo {
     margin: 20px;
-    height: 90%;
+    height: 90%; 
+}
+
+img {
+    height: 100%;
 }
 
 .navTitle {
