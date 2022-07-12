@@ -12,7 +12,7 @@ const ItemCount = ({ initial, onAdd, stock,}) => {
     }
 
     const clickResta = () => {
-        if (contador > 0) {
+        if (contador > 1) {
             setContador(contador - 1);
         }
     }

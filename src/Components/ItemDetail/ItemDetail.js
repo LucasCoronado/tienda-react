@@ -1,16 +1,22 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import "./itemDetail.css";
+import BtnFinalizar from '../BtnFinalizar/BtnFinalizar';
 
 const ItemDetail = ({articulo}) => {
+    
+    const [click, setClick] = useState(true)
+
+    useEffect(() => {
+      
+      }, [click])
     
     const onAdd = (contador) => {
         if (contador > 0) {
           console.log(`Se agregaron:  ${contador}`);
-        }
-        else {
-            console.log('No se agrego nada al carrito');
-        }
+          setClick(click === false)
+         }
+         
       }
 
   return (
@@ -20,9 +26,10 @@ const ItemDetail = ({articulo}) => {
             <h1>{articulo.nombre}</h1>
             <h2>${articulo.precio}</h2>
             <h3>{articulo.descripcion}</h3>
-            <ItemCount stock={articulo.stock} initial={1} onAdd={onAdd}/>
+            { click ? <ItemCount stock={articulo.stock} initial={1} onAdd={onAdd}/> : <BtnFinalizar/>}
         </div>
     </div>
+    
   )
 }
 
