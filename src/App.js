@@ -4,12 +4,14 @@ import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from './Components/Cart/Cart.js'
+import CustomProvider from "./Context/CartContext";
 
 const App = () =>{
   const greeting= "Bienvenido/a a la Tienda"
 
   return (
     <BrowserRouter>
+    <CustomProvider>
     <NavBar/>
     <Routes>
       <Route path="/" element={<ItemListContainer greeting={greeting}/>}/>
@@ -17,6 +19,7 @@ const App = () =>{
       <Route path="/detail/:id" element={<ItemDetailContainer greeting={greeting}/>}/>
       <Route path="/cart" element={<Cart/>}/>
     </Routes>
+    </CustomProvider>
     </BrowserRouter>
 
   )

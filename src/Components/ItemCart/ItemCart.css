@@ -1,0 +1,9 @@
+.itemCart {
+    margin: 20px;
+    width: 30%;
+    border: 1px solid black;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
