@@ -47,8 +47,16 @@ useEffect(() => {
     setCantidad(cantidadP)
   }
 
+  const calcularTotal = () =>{
+    let count = 0
+    productos.forEach((prod)=>{
+    count += prod.cantidad * prod.precio
+    })
+    return count
+    }
+
   return (
-    <Provider value={{ productos, agregarProducto, borrarProducto, clear, cantidad} }>
+    <Provider value={{ productos, agregarProducto, borrarProducto, clear, cantidad, calcularTotal} }>
         {children}
     </Provider>
   )

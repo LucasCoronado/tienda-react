@@ -5,7 +5,7 @@ import "./ItemCart.css"
 
 
 const ItemCart = ({producto}) => {
-    const {nombre, cantidad, id} = producto
+    const {nombre, cantidad, id, precio} = producto
     const {borrarProducto} = useContext(cartContext)
 
     const borrarP = () =>{
@@ -15,6 +15,7 @@ const ItemCart = ({producto}) => {
     <div className='itemCart'>
         <h2>{nombre}</h2>
         <h4>{cantidad}</h4>
+        <h3>${precio*cantidad}</h3>
         <button onClick={borrarP}>Borrar producto</button>
     </div>
   )
