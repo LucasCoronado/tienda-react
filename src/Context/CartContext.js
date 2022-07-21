@@ -10,7 +10,7 @@ const CustomProvider = ({children}) => {
 
 useEffect(() => {
   cantidadProducto()
-  
+  // eslint-disable-next-line
 },[productos])
   
   const agregarProducto = (producto) => {

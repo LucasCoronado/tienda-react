@@ -18,3 +18,8 @@
   h4{
     text-align: center;
   }
+
+  .tarjetasProductos img {
+    max-height: 250px;
+    max-width: 90%;
+  }

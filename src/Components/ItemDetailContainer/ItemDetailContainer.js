@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { getArticuloData } from '../../assets/articulos'
 import { useParams } from 'react-router-dom'
+import { db } from '../../firebase/firebase'
+import { doc, getDoc, collection } from 'firebase/firestore'
 
 
 const ItemDetailContainer = ({ greeting }) => {
@@ -11,10 +12,15 @@ const ItemDetailContainer = ({ greeting }) => {
   const { id } = useParams()
 
   useEffect(() => {
-    setCargando(true);
-    getArticuloData(id)
-      .then((res) => {
-        setArticulo(res);
+
+    const productCollection = collection(db, 'productos');
+    const refDoc = doc(productCollection, id)
+    getDoc(refDoc)
+      .then(result => {
+        setArticulo({
+          id: result.id,
+          ...result.data(),
+        })
       })
       .catch((error) => {
         console.log(error);
