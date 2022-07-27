@@ -23,6 +23,7 @@ const Cart = () => {
       {productos.map((producto) => <ItemCart key={producto.id} producto={producto} />)}
       <div className='cartBtn'>
       <p>TOTAL ${calcularTotal()}</p>
+        <Link to={"/cartForm"}><button>Finalizar compra</button></Link>
         <button onClick={clear}>Limpiar Carrito</button></div>
     </div>
   )

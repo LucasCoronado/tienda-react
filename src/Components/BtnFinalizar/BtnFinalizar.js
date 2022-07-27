@@ -8,7 +8,7 @@ const BtnFinalizar = () => {
             <div >
                 <h4>Estas solo a un paso</h4>
                 <span>
-                <Link to={"/Cart"}><button>Finalizar compra</button></Link>
+                <Link to={"/Cart"}><button>Ir al carrito</button></Link>
                 </span>
             </div>
         </div>
